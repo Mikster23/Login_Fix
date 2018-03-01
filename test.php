@@ -19,7 +19,7 @@ if ($db->connect_errno) {
 }
 $telnum = "09066040569";
 
-$msg =  "Hello! I have a message.";
+$msg =  "Hello! I am a message.";
 $num =  "0922";
 $sendid = 4;
 date_default_timezone_set("Asia/Manila");
