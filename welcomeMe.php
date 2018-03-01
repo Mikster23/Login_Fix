@@ -20,7 +20,7 @@ else {
 
   $conn = new mysqli($servername, $username, $password,$dbase);
 
-
+// Ganda mo joj
       $mynum = $_SESSION["sphonenum"];
 
       $sendid = $_SESSION['sId'];
