@@ -1,6 +1,6 @@
 <?php
 session_start();
-//edited
+//edited again
 require("./_connect.php");
 
 //connect to db
