@@ -1,6 +1,6 @@
 <?php
 session_start();
-//edited again
+//edited by joj
 require("./_connect.php");
 
 //connect to db
