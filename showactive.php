@@ -35,7 +35,7 @@
   //  $quser=mysqli_query($conn,"select receiver_num  from chat where sender_id = '$sendid' or receiver_id = '$sendid' ");
 
  //$quser = mysqli_query($conn,"select receiver_num  , sender_num from chat where receiver_num = $mynum or sender_num = $mynum  ");
- $quser = mysqli_query($conn,"select * from chat where receiver_num = $mynum or sender_num = $mynum  ");
+ $quser = mysqli_query($conn,"select * from chat where receiver_num = $mynum or sender_num = $mynum ");
     //  $quser = mysqli_query($conn,"select receiver_num  , sender_num where receiver_num != '$mynum' AND sender_num ='$mynum'");
 
 
@@ -70,7 +70,7 @@
               $fc+=1;
 
             }*/
-        //   echo 'receiver: ', $row['sender_num'];
+        //   echo 'receiver: ', $row['sender_num'];  
         }
         else if($urow['receiver_num']!=$mynum) {
       //   echo 'sender: ', $row['receiver_num'];
