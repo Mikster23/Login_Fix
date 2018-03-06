@@ -70,7 +70,7 @@
               $fc+=1;
 
             }*/
-        //   echo 'receiver: ', $row['sender_num'];  
+        //   echo 'receiver: ', $row['sender_num'];
         }
         else if($urow['receiver_num']!=$mynum) {
       //   echo 'sender: ', $row['receiver_num'];
@@ -98,7 +98,7 @@
               $name[$flag] = $urow['sender_name'];
             }
             /*switch($urow['sender_name']){
-              case "": $name[$flag] = "Unknown"; break;
+              case "": $name[$fgilag] = "Unknown"; break;
               default: $name[$flag] = $urow['sender_name']; break;
             }*/
             if($urow['read_status']==1){

@@ -35,7 +35,7 @@
   //  $quser=mysqli_query($conn,"select receiver_num  from chat where sender_id = '$sendid' or receiver_id = '$sendid' ");
 
  //$quser = mysqli_query($conn,"select receiver_num  , sender_num from chat where receiver_num = $mynum or sender_num = $mynum  ");
- $quser = mysqli_query($conn,"select * from chat where receiver_num = $mynum or sender_num = $mynum  ");
+ $quser = mysqli_query($conn,"select * from chat where receiver_num = $mynum or sender_num = $mynum ");
     //  $quser = mysqli_query($conn,"select receiver_num  , sender_num where receiver_num != '$mynum' AND sender_num ='$mynum'");
 
 
@@ -98,7 +98,7 @@
               $name[$flag] = $urow['sender_name'];
             }
             /*switch($urow['sender_name']){
-              case "": $name[$flag] = "Unknown"; break;
+              case "": $name[$fgilag] = "Unknown"; break;
               default: $name[$flag] = $urow['sender_name']; break;
             }*/
             if($urow['read_status']==1){
@@ -147,6 +147,23 @@
       $nameNew[$z]=$value;
       $z+=1;
     }
+
+   for ($i = 0 ; $i < sizeof($nameNew) ; $i++){
+     $nameNew[$i] =ucfirst( $nameNew[$i].$numNew[$i]);
+    // print_r($nameNew[$i]);
+
+
+   }
+   sort($nameNew);
+
+      for ($i = 0 ; $i < sizeof($nameNew) ; $i++){
+      $newString = preg_replace('/[^0-9]+/', '', $nameNew[$i]);
+        $numNew[$i] = $newString;
+       // print_r($nameNew[$i]);
+
+
+      }
+
     $asd=0;
     for ($i=0; $i < sizeof($numNew); $i++) {
       if(sizeof($checkstat)!=0){
@@ -220,7 +237,7 @@ if(isset($rrow))
               case 'globe':
                 ?><tr class="clickable-row" style="background:#4C6A92;" >
                   <td>
-                    <p class="Logoitqwe"><i class="fa fa-user-circle"></i></p>
+                    <p class="Logoit"><i class="fa fa-user-circle"></i></p>
                   </td>
                   <td>
                     <?php
@@ -230,8 +247,8 @@ if(isset($rrow))
                      foreach ($checkstat as $value) {
                        if($temp == $value){
                          ?>
-                         <p class="Nameitqwe" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"> <?php echo $nameNew[$x]; ?></p>
-                         <p class="Numitqwe" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"><?php  echo $numNew[$x]."|".strtoupper($carrier);?></p>
+                         <p class="Nameit" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"> <?php echo $nameNew[$x]; ?></p>
+                         <p class="Numit" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"><?php  echo $numNew[$x]."|".strtoupper($carrier);?></p>
                          <?php
                        }
                      }
@@ -241,8 +258,8 @@ if(isset($rrow))
                        if($temp == $key){
                         // print("IM INSIDE ".$numNew[$x]." | ".$x." SIZE: ".sizeof($checkstat));
                          ?>
-                         <p class="Nameitqwe"> <?php echo $nameNew[$x]; ?></p>
-                         <p class="Numitqwe"><?php  echo $numNew[$x]."|".strtoupper($carrier); ?> </p> <?php
+                         <p class="Nameit"> <?php echo $nameNew[$x]; ?></p>
+                         <p class="Numit"><?php  echo $numNew[$x]."|".strtoupper($carrier); ?> </p> <?php
                        }
                      }
                    }
@@ -254,7 +271,7 @@ if(isset($rrow))
               case 'smart':
                 ?><tr class="clickable-row" style="background:#92B558;" >
                   <td>
-                    <p class="Logoitqwe"><i class="fa fa-user-circle"></i></p>
+                    <p class="Logoit"><i class="fa fa-user-circle"></i></p>
                   </td>
                   <td>
                     <?php
@@ -264,8 +281,8 @@ if(isset($rrow))
                      foreach ($checkstat as $value) {
                        if($temp == $value){
                          ?>
-                         <p class="Nameitqwe" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"> <?php echo $nameNew[$x]; ?></p>
-                         <p class="Numitqwe" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"><?php  echo $numNew[$x]."|".strtoupper($carrier);?></p>
+                         <p class="Nameit" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"> <?php echo $nameNew[$x]; ?></p>
+                         <p class="Numit" style="text-shadow: 2px 2px 4px #000000; font-weight:bold;"><?php  echo $numNew[$x]."|".strtoupper($carrier);?></p>
                          <?php
                        }
                      }
@@ -275,8 +292,8 @@ if(isset($rrow))
                        if($temp == $key){
                         // print("IM INSIDE ".$numNew[$x]." | ".$x." SIZE: ".sizeof($checkstat));
                          ?>
-                         <p class="Nameitqwe"> <?php echo $nameNew[$x]; ?></p>
-                         <p class="Numitqwe"><?php  echo $numNew[$x]."|".strtoupper($carrier); ?> </p> <?php
+                         <p class="Nameit"> <?php echo $nameNew[$x]; ?></p>
+                         <p class="Numit"><?php  echo $numNew[$x]."|".strtoupper($carrier); ?> </p> <?php
                        }
                      }
                    }
