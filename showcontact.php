@@ -150,15 +150,23 @@
 
    for ($i = 0 ; $i < sizeof($nameNew) ; $i++){
      $nameNew[$i] =ucfirst( $nameNew[$i].$numNew[$i]);
+
+
     // print_r($nameNew[$i]);
 
 
    }
+
+
    sort($nameNew);
 
       for ($i = 0 ; $i < sizeof($nameNew) ; $i++){
       $newString = preg_replace('/[^0-9]+/', '', $nameNew[$i]);
         $numNew[$i] = $newString;
+
+
+
+
        // print_r($nameNew[$i]);
 
 

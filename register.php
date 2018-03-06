@@ -25,6 +25,10 @@ if(isset($_POST["pass"])==isset($_POST["conf"])){
     $us =$_POST["user"];
     $pass =$_POST["pass"];
     $passrep =$_POST["conf"];
+
+    $fin = ucfirst($fn);
+    $min = ucfirst($mn);
+    $lin = ucfirst($ln);
                     /*
                     <script>
                       window.alert('Password not equal');
@@ -39,7 +43,7 @@ if(isset($_POST["pass"])==isset($_POST["conf"])){
   														echo "Error: " . $sql . "<br>" . $conn->error;
   													}*/
     $stmt = $conn->prepare("INSERT INTO users (firstName,middleName,lastName,department,email,userName,password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss" ,$fn ,$mn ,$ln ,$de ,$em ,$us ,$pass);
+    $stmt->bind_param("sssssss" ,$fin ,$min ,$lin ,$de ,$em ,$us ,$pass);
     $stmt->execute();
     $stmt->close();
       /*
