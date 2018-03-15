@@ -163,7 +163,7 @@
       for ($i = 0 ; $i < sizeof($nameNew) ; $i++){
       $newString = preg_replace('/[^0-9]+/', '', $nameNew[$i]);
         $numNew[$i] = $newString;
-
+      $nameNew[$i]  =    preg_replace('/\d/', '', $nameNew[$i]);
 
 
 
